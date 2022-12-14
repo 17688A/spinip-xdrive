@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "c:\\Users\\Diego\\Documents\\spinip-xdrive\\include"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "intelliSenseMode": "gcc-arm",
+      "compileCommands": "c:\\Users\\Diego\\Documents\\spinip-xdrive\\compile_commands.json",
+      "browse": {
+        "path": [
+          "c:\\Users\\Diego\\Documents\\spinip-xdrive"
+        ],
+        "limitSymbolsToIncludedHeaders": true,
+        "databaseFilename": ""
+      },
+      "compilerPath": "c:\\Users\\Diego\\AppData\\Roaming\\Code\\User\\globalStorage\\sigbots.pros\\install\\pros-toolchain-windows\\usr\\bin\\arm-none-eabi-g++"
+    }
+  ],
+  "version": 4
+}
