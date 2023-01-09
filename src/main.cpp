@@ -24,7 +24,7 @@ void on_center_button() {
  */
 void initialize() {
 	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Corona del Sol High School\n\nShark Oil");
+	pros::lcd::set_text(1, "Hello PROS User!");
 
 	pros::lcd::register_btn1_cb(on_center_button);
 }
@@ -75,30 +75,19 @@ void autonomous() {}
  */
 void opcontrol() {
 	pros::Controller master(pros::E_CONTROLLER_MASTER);
-
-	pros::Motor LF_mtr(1);
-	pros::Motor bl_mtr(2, true);
-	pros::Motor fr_mtr(3);
-	pros::Motor br_mtr(4, true);
+	pros::Motor left_mtr(1);
+	pros::Motor right_mtr(2);
 
 	while (true) {
+		pros::lcd::print(0, "%d %d %d", (pros::lcd::read_buttons() & LCD_BTN_LEFT) >> 2,
+		                 (pros::lcd::read_buttons() & LCD_BTN_CENTER) >> 1,
+		                 (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);
+		int left = master.get_analog(ANALOG_LEFT_Y);
+		int right = master.get_analog(ANALOG_RIGHT_Y);
 
-		int power  = master.get_analog(ANALOG_RIGHT_Y);
-		int turn   = master.get_analog(ANALOG_LEFT_X);
-		int strafe = master.get_analog(ANALOG_RIGHT_Y);
+		left_mtr = left;
+		right_mtr = right;
 
-		int LF  = power + turn + strafe;
-		int LB  = power + turn - strafe;
-		int RF  = power - turn - strafe;
-		int RB  = power - turn + strafe;
-
-		LF_mtr.move(LF);
-		fr_mtr.move(RF);
-		bl_mtr.move(LB);
-		br_mtr.move(RB);
 		pros::delay(20);
-
-
-		
 	}
 }
