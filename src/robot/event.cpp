@@ -8,7 +8,7 @@
  */
 void initialize() {
 	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Corona del Sol High School\n\nShark Oil");
+	pros::lcd::set_text(1, "Shark Oil");
 
 	pros::lcd::register_btn1_cb(on_center_button);
 }

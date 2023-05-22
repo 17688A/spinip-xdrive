@@ -23,24 +23,24 @@ void opcontrol() {
 
 	while (true) {
 
-	int power  = master.get_analog(ANALOG_RIGHT_Y);
+	int spin = master.get_analog(ANALOG_RIGHT_X);
 
 
-	int turn   = master.get_analog(ANALOG_LEFT_Y);
+	int straight = master.get_analog(ANALOG_LEFT_Y);
 
 
-	int strafe = master.get_analog(ANALOG_RIGHT_X);
+	int strafe = master.get_analog(ANALOG_RIGHT_Y);
 
-	int lfDrive  = power + turn + strafe;
-	int lbDrive  = power + turn - strafe;
-	int rfDrive  = power - turn - strafe;
-	int rbDrive  = power - turn + strafe;
+	int lfDrive  = spin + straight + strafe;
+	int lbDrive  = spin + straight - strafe;
+	int rfDrive  = spin - straight - strafe;
+	int rbDrive  = spin - straight + strafe;
 
 	lf_mtr.move(lfDrive);
 	lb_mtr.move(lbDrive);
 	rf_mtr.move(rfDrive);
 	rb_mtr.move(rbDrive);
+
 	pros::delay(20);
-		
 	}
 }

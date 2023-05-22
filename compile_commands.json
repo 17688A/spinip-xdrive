@@ -16,7 +16,7 @@
             "-isystemc:\\users\\diego\\appdata\\roaming\\code\\user\\globalstorage\\sigbots.pros\\install\\pros-toolchain-windows\\usr\\bin\\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include",
             "-iquote./include",
             "-iquote./include/okapi/squiggles",
-            "-iquote./include/./",
+            "-iquote./include/robot/",
             "-mcpu=cortex-a9",
             "-mfpu=neon-fp16",
             "-mfloat-abi=softfp",
@@ -33,10 +33,10 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
-            "bin/main.cpp.o",
-            "src\\main.cpp"
+            "bin/robot/teleop.cpp.o",
+            "src\\robot\\teleop.cpp"
         ],
         "directory": "C:\\Users\\Diego\\Documents\\spinip-xdrive",
-        "file": "src\\main.cpp"
+        "file": "src\\robot\\teleop.cpp"
     }
 ]
